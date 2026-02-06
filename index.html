@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Date Header</title>
+  <title>Date Badge</title>
 
-  <!-- Sanchez Font -->
+  <!-- Sanchez font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Sanchez&display=swap" rel="stylesheet">
@@ -16,54 +16,48 @@
       font-family: 'Sanchez', serif;
     }
 
-    .container {
-      position: relative;
-      height: 90px;
-      padding: 14px 16px;
+    .badge-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 140px;
+      width: 100%;
+    }
+
+    .date-badge {
+      background: #000000;
+      color: #f8ee21;
+      border: 6px solid #f8ee21;
+      border-radius: 28px;
+      padding: 28px 48px;
+      font-size: 40px;
+      font-weight: 400;
+      letter-spacing: 1px;
+      text-align: center;
       box-sizing: border-box;
     }
 
-    .date {
-      font-size: 22px;
-      color: #f8ee21;
-    }
-
-    .logo-wrap {
-      position: absolute;
-      top: 0;
-      right: 0;
-      background: #000;
-      padding: 10px;
-    }
-
-    .logo-wrap img {
-      height: 60px;
-      display: block;
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+      .date-badge {
+        font-size: 26px;
+        padding: 20px 28px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <div class="date" id="currentDate"></div>
-
-    <div class="logo-wrap">
-      <img src="AmericasPlace.png" alt="Waffle House America's Place">
+  <div class="badge-wrapper">
+    <div class="date-badge" id="dateDisplay">
+      <!-- Date injected here -->
     </div>
   </div>
 
   <script>
-    (function () {
-      var d = new Date();
-      var options = {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-      };
-      document.getElementById('currentDate').textContent =
-        d.toLocaleDateString('en-US', options);
-    })();
+    // 🔁 Replace this value if you want FY/OP logic instead
+    document.getElementById("dateDisplay").textContent =
+      "FY26 OP9 Week 4 Day 12";
   </script>
 
 </body>
